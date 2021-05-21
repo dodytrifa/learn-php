@@ -54,7 +54,11 @@ var_dump(is_null($name)); //* name null : bool(false)
 //? UNSET: untuk menghapus variabel
 $variabel = "John";
 unset($variabel);
-
-//* jika di echo akan error di terminal
+// unset jika di echo akan error di terminal
 
 //? ISSET: cek data null
+
+//* ARRAY
+$values = array(3,4,5,6);
+var_dump($values);
+//* ARRAY dianggap sebagai Map

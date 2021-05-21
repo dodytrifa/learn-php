@@ -1,0 +1,41 @@
+1. buat database dengan nama dody_tf, kemudian import file sql-nya
+
+2.
+    select * from provinces;
+    select * from regencies;
+    select * from districts;
+    select * from villages;
+
+3. alter table provinces rename to provinsi;
+
+4. alter table regencies rename to kabupaten_kota;
+
+5. alter table districts rename to kecamatan;
+
+6. alter table villages rename to desa;
+
+7. 
+    select left(d.id, 7) id_desa, d.name desa, p.name provinsi
+    from provinsi p
+    join kabupaten_kota kk on kk.province_id=p.id
+    join kecamatan k on k.regency_id=kk.id
+    join desa d on d.district_id=k.id
+    order by d.id;
+
+8.
+    select left(k.id, 4) id_kecamatan, k.name kecamatan, p.name provinsi 
+    from provinsi p 
+    join kabupaten_kota kk on kk.province_id=p.id 
+    join kecamatan k on k.regency_id=kk.id 
+    join desa d on d.district_id=k.id
+    order by k.id;
+
+9.
+    select kk.id id_kabupaten_kota, kk.name kabupaten_kota, p.name provinsi 
+    from provinsi p 
+    join kabupaten_kota kk on kk.province_id=p.id
+    join kecamatan k on k.regency_id=kk.id
+    join desa d on d.district_id=k.id
+    order by k.id;
+
+10. mysqldump -u root -p dody_tf > dody_tf.sql
