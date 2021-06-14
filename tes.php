@@ -36,6 +36,7 @@ echo "\n";
 
 //* $name = "John"
 
+//echo
 //? CONSTANT
 
 define("AUTHOR", "Yuval"); //! karena constant, gak boleh define lagi di bawah
